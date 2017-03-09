@@ -1,4 +1,4 @@
-# Sandbox
+# Sandbox (or SandbUX)
 IIIF Usability Test Sandbox
 
 ## Introduction

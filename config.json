@@ -1,3 +1,5 @@
+// Configuration taken from http://universalviewer.io/examples/
+
 {
   "options": {
     "allowStealFocus": false,
@@ -10,6 +12,7 @@
     "limitLocales": false,
     "multiSelectionMimeType": "application/zip",
     "navigatorEnabled": true,
+    "openTemplate": "http://universalviewer.io?manifest={0}", // What pattern should I used?
     "overrideFullScreen": false,
     "pagingEnabled": true,
     "pagingOptionEnabled": true,

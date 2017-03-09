@@ -1,4 +1,5 @@
 // Configuration taken from http://universalviewer.io/examples/
+// What pattern should I used for .openTemplate?
 
 {
   "options": {
@@ -12,7 +13,7 @@
     "limitLocales": false,
     "multiSelectionMimeType": "application/zip",
     "navigatorEnabled": true,
-    "openTemplate": "http://universalviewer.io?manifest={0}", // What pattern should I used?
+    "openTemplate": "http://universalviewer.io?manifest={0}", 
     "overrideFullScreen": false,
     "pagingEnabled": true,
     "pagingOptionEnabled": true,

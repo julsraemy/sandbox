@@ -3,6 +3,8 @@ IIIF Usability Test Sandbox
 
 ## Introduction
 This GitHub repository has been created to store the components which will be used to carry out usability tests on the Universal Viewer and Mirador.
+- [sandbox.html](sandbox.html) is for the moment the homepage, perhaps one homepage per viewer will be created
+- The Usability tests are conducted on the viewers (Mirador 2.2.0 and The Universal Viewer 2.0.1) and not on the sandbox page(s)
 
 ## Context
 This work is realised in the context of my LIS Bachelor's thesis: _The International Image Interoperability Framework (IIIF): raising awareness of the user benefits for scholarly editions_. For further information, have a look at the [specifications](https://julienaraemy.wordpress.com/2017/01/30/my-bachelors-thesis/).

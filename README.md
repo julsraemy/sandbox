@@ -1,5 +1,5 @@
 # Sandbox (or sandbUX)
-IIIF Usability Test Sandbox
+IIIF-Viewers Usability Test Sandbox
 
 ## Introduction
 This GitHub repository has been created to store the components which will be used to carry out usability tests on the Universal Viewer and Mirador.

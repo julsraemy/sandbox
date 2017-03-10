@@ -3,7 +3,7 @@ IIIF Usability Test Sandbox
 
 ## Introduction
 This GitHub repository has been created to store the components which will be used to carry out usability tests on the Universal Viewer and Mirador.
-- [sandbox.html](sandbox.html) is for the moment the homepage, perhaps one homepage per viewer will be created
+- [index.html](index.html) is for the moment the only homepage, perhaps one homepage per viewer will be created to have parallel usability tests.
 - The Usability tests are conducted on the viewers (Mirador 2.2.0 and The Universal Viewer 2.0.1) and not on the sandbox page(s)
 
 ## Context

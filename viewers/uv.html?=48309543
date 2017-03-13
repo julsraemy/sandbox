@@ -9,7 +9,7 @@
   <body>
 	<div 	class="uv" 
 			data-locale="en-GB:English (GB)" 
-			data-fullscreen="" 
+			data-fullscreen="https://iiif.lib.harvard.edu/manifests/drs:48309543" 
 			data-config="config.json" 
 			data-uri=""  
 			data-sequenceindex="0" 

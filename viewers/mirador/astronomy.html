@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
-    <link rel="icon" href="mirador/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../mirador/css/mirador-combined.css">
+    <link rel="icon" href="../../mirador/favicon.ico" type="image/x-icon" />
     <title>Mirador Viewer</title>
     <style type="text/css">
      #viewer {
@@ -17,13 +17,13 @@
   <body>
     <div id="viewer"></div>
 
-    <script src="mirador/mirador.min.js"></script>
+    <script src="../../mirador/mirador.min.js"></script>
     <script type="text/javascript">
 
      $(function() {
        myMiradorInstance = Mirador({
          id: "viewer",
-         layout: "1x2",
+         layout: "1x1",
          buildPath: "mirador/",
          data: [
            { manifestUri: "https://iiif.lib.harvard.edu/manifests/drs:48309543", location: "Harvard University"},
@@ -44,7 +44,10 @@
            { manifestUri: "http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json", location: "e-codices"},
            { manifestUri: "http://wellcomelibrary.org/iiif/b2103090x/manifest", location: "Wellcome Library"}
          ],
-         windowObjects: [],
+         windowObjects: [{
+          loadedManifest: "http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json",
+          viewType: "ImageView"
+         }],
          annotationEndpoint: {
            name:"Local Storage",
            module: "LocalStorageEndpoint" }

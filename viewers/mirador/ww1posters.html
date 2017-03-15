@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
-    <link rel="icon" href="mirador/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../mirador/css/mirador-combined.css">
+    <link rel="icon" href="../../mirador/favicon.ico" type="image/x-icon" />
     <title>Mirador Viewer</title>
     <style type="text/css">
      #viewer {
@@ -17,13 +17,13 @@
   <body>
     <div id="viewer"></div>
 
-    <script src="mirador/mirador.min.js"></script>
+    <script src="../../mirador/mirador.min.js"></script>
     <script type="text/javascript">
 
      $(function() {
        myMiradorInstance = Mirador({
          id: "viewer",
-         layout: "1x2",
+         layout: "1x1",
          buildPath: "mirador/",
          data: [
            { manifestUri: "https://iiif.lib.harvard.edu/manifests/drs:48309543", location: "Harvard University"},
@@ -39,9 +39,16 @@
            { manifestUri: "http://gallica.bnf.fr/iiif/ark:/12148/btv1b55002481n/manifest.json", location: 'BnF'},
            { manifestUri: "http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json", location: "e-codices"},
            { manifestUri: "http://www.e-codices.unifr.ch/metadata/iiif/fmb-cb-0600a/manifest.json", location: 'e-codices'},
-           { manifestUri: "https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json", location: "Internet Archive"}
+           { manifestUri: "https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json", location: "Internet Archive"},
+           { manifestUri: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/a882e289-f46e-4aab-8f5c-c26c31071859.json", location: "Bodleian Libraries"},
+           { manifestUri: "http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json", location: "e-codices"},
+           { manifestUri: "http://wellcomelibrary.org/iiif/b2103090x/manifest", location: "Wellcome Library"},
+           { manifestUri: "http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json", location: "e-codices"}
          ],
-         windowObjects: [],
+         windowObjects: [{
+          loadedManifest: "http://dev.llgc.org.uk/iiif/ww1posters.json",
+          viewType: "ImageView"
+         }],
          annotationEndpoint: {
            name:"Local Storage",
            module: "LocalStorageEndpoint" }

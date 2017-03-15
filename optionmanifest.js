@@ -5,4 +5,15 @@ function run() {
    		document.getElementById("dragndrop").href = link;
     return false;
     			}
-    			
+
+function run() {
+	var link = document.getElementById("manifestSelect").value2;
+   		document.getElementByID("uvIcon").href = link;
+    return false;
+    			}
+
+function run() {
+	var link = document.getElementById("manifestSelect").value3;
+   		document.getElementByID("miradorIcon").href = link;
+    return false;
+    			}      			

@@ -2,7 +2,7 @@
 IIIF-Viewers Usability Test Sandbox
 
 ## Introduction
-This GitHub repository has been created to store the components which will be used to carry out usability tests on the Universal Viewer and Mirador. A URL will be available from April to June 2017 on http://campus.hesge.ch/iiif-sandbox/
+This GitHub repository has been created to store the components which will be used to carry out usability tests on the Universal Viewer and Mirador. A URL will be available from April to June 2017 on http://campus.hesge.ch/iiif-sandbox/index.html
 - [index.html](index.html) is for the moment the only homepage, perhaps one homepage per viewer will be created to have parallel usability tests.
 - The Usability tests are conducted on the viewers (Mirador 2.2.0 and The Universal Viewer 2.0.1) and not on the sandbox page(s)
 - A lot of containers have been created in order to have clean URLs

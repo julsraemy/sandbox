@@ -1,19 +1,13 @@
 // Select a IIIF manifest from <select> to populate text value and the IIIF logo href
 function run() {
-	var link = document.getElementById("manifestSelect").value;
-    	document.getElementById("manifest").value = link;
-   		document.getElementById("dragndrop").href = link;
+
+  var select = $('select#manifestSelect');
+  var value = select.val();
+  var option = select.find("option[value='"+value+"']") ;
+
+  $("#dragndrop").attr('href', value);
+  $('#uvIcon').attr('href', option.attr('href_uv'));
+  $('#miradorIcon').attr('href', option.attr('href_mirador'));
     return false;
     			}
-
-function run() {
-	var link = document.getElementById("manifestSelect").value2;
-   		document.getElementByID("uvIcon").href = link;
-    return false;
-    			}
-
-function run() {
-	var link = document.getElementById("manifestSelect").value3;
-   		document.getElementByID("miradorIcon").href = link;
-    return false;
-    			}      			
+	

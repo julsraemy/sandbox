@@ -6,34 +6,37 @@
 		<link rel=stylesheet href="css/base.css">
 		<title>sandbUX</title>
 		<script type="text/javascript" src="optionmanifest.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<h1>IIIF-viewers Usability Test Sandbox</h1>
-			<p>Select an item from this list and open it with The Universal Viewer or Mirador, two popular IIIF viewers. You can also drag and drop the IIIF logo into one of the viewers.</p>
-			<select id="manifestSelect" onchange="run();">
-				<option value="http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json" data-uv="/viewers/uv/iliad.html" data-mirador="/viewers/mirador/iliad.html">Homer, Iliad with scholia and an interlinear paraphrase of Books I to XII, Genève, Bibliothèque de Genève, MS. gr. 44</option>
-				<option value="https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json" value2="/viewers/uv/relativity.html" value3="/viewers/mirador/relativity.html">Einstein, The principle of relativity; original papers</option>
-				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/60834383-7146-41ab-bfe1-48ee97bc04be.json" value2="/viewers/uv/romance.html" value3="/viewers/mirador/romance.html">Romance of Alexander, Alexander and Dindimus, Li Livres du Graunt Caam; Inside upper cover, MS. Bodl. 264</option>
-				<option value="http://wellcomelibrary.org/iiif/b18035723/manifest" value2="/viewers/uv/wunder.html" value3="/viewers/mirador/wunder.html">Wunder der Vererbung</option>
-				<option value="https://purl.stanford.edu/qm670kv1873/iiif/manifest.json" value2="/viewers/uv/book_of_hours.html" value3="/viewers/mirador/book_of_hours.html">Book of Hours, Walters Ms. W.168</option>
-				<option value="http://www.e-codices.unifr.ch/metadata/iiif/fmb-cb-0600a/manifest.json" value2="/viewers/uv/buddha.html" value3="/viewers/mirador/buddha.html">The Life of Buddha, first book (Shaka no Honji, jō), Cod. Bodmer 600a</option>	
-				<option value="http://wellcomelibrary.org/iiif/b19684915/manifest" value2="/viewers/uv/apocalypse.html" value3="/viewers/mirador/apocalypse.html">Wellcome Apocalypse</option>
-				<option value="http://luna.folger.edu/luna/servlet/iiif/m/FOLGERCM1~6~6~899189~195467/manifest" value2="/viewers/uv/hamlet.html" value3="/viewers/mirador/hamlet.html">William Shakespeare, The tragedy of Hamlet Prince of Denmarke</option>	
-				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/df9533a5-747f-45ae-877b-58449932aee4.json" value2="/viewers/uv/geology.html" value3="/viewers/mirador/geology.html">Principles of Geology: Being an attempt to explain the former changes of the Earth's Surface, by reference to causes now in operation.</option>
-				<option value="http://dev.llgc.org.uk/iiif/ww1posters.json" value2="/viewers/uv/ww1posters.html" value3="/viewers/mirador/ww1posters.html">First World War posters [20th cent.]</option>
-				<option value="https://iiif.lib.harvard.edu/manifests/drs:48309543" value2="/viewers/uv/chronique.html" value3="/viewers/mirador/chronique.html">Chronique du monde depuis la création, et des rois de France et d'Angleterre, jusqu'à l'an 1461 : manuscript, [ca. 1461], MS Typ 41. Houghton Library, Harvard University</option>
-				<option value="http://api.bl.uk/metadata/iiif/ark:/81055/vdc_00000004216E/manifest.json" value2="/viewers/uv/dickens.html" value3="/viewers/mirador/dickens.html">The Works of Charles Dickens. Household edition. [With illustrations.].</option>
-				<option value="http://gallica.bnf.fr/iiif/ark:/12148/btv1b55002481n/manifest.json" value2="/viewers/uv/atlas_catalan.html" value3="/viewers/mirador/atlas_catalan.html">Abraham Cresques , Atlas de cartes marines , dit [Atlas catalan], Espagnol 30, BnF</option>
-				<option value="http://wellcomelibrary.org/iiif/b2103090x/manifest" value2="/viewers/uv/indians.html" value3="/viewers/mirador/indians.html">Letters and notes on the manners, customs, and condition of the North American Indians</option>
-				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/a882e289-f46e-4aab-8f5c-c26c31071859.json" value2="/viewers/uv/urania.html" value3="/viewers/mirador/urania.html">Urania's mirror, or a view of the heavens</option>
-				<option value="http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json" value2="/viewers/uv/astronomy.html" value3="/viewers/mirador/astronomy.html">Composite manuscript of content related to astronomy, Basel, Universitätsbibliothek, F III 25</option>
-				<option value="http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json" value2="/viewers/uv/sententiarum.html" value3="/viewer/mirador/sententiarum.html">Petrus Lombardus, Liber sententiarum I-IV, 	Cod. S II 72</option>
+		<h1 class="header">Usability Test Sandbox: IIIF, The Universal Viewer, and Mirador</h1>
+			<p class="content">Select an item from this list and open it with The Universal Viewer or Mirador, two IIIF-compliant viewers. You can also drag and drop the IIIF logo into one of the viewers.</p>
+			<select id="manifestSelect" onchange="run();" style="height: 36px; font-size: 16px">
+				<option disabled selected value>Select an item</option>
+				<option value="http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json" href_uv="./viewers/uv/iliad.html" href_mirador="./viewers/mirador/iliad.html">Homer, Iliad with scholia and an interlinear paraphrase of Books I to XII, Genève, Bibliothèque de Genève, MS. gr. 44</option>
+				<option value="https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json" vhref_uv="./viewers/uv/relativity.html" href_mirador="./viewers/mirador/relativity.html">Albert Einstein, The principle of relativity; original papers</option>
+				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/60834383-7146-41ab-bfe1-48ee97bc04be.json" href_uv="./viewers/uv/romance.html" href_mirador="./viewers/mirador/romance.html">Romance of Alexander, Alexander and Dindimus, Li Livres du Graunt Caam; Inside upper cover, MS. Bodl. 264</option>
+				<option value="http://wellcomelibrary.org/iiif/b18035723/manifest" href_uv="./viewers/uv/wunder.html" href_mirador="./viewers/mirador/wunder.html">Wunder der Vererbung</option>
+				<option value="https://purl.stanford.edu/qm670kv1873/iiif/manifest.json" href_uv="./viewers/uv/book_of_hours.html" href_mirador="./viewers/mirador/book_of_hours.html">Book of Hours, Walters Ms. W.168</option>
+				<option value="http://www.e-codices.unifr.ch/metadata/iiif/fmb-cb-0600a/manifest.json" href_uv="./viewers/uv/buddha.html" href_mirador="./viewers/mirador/buddha.html">The Life of Buddha, first book (Shaka no Honji, jō), Cod. Bodmer 600a</option>	
+				<option value="http://wellcomelibrary.org/iiif/b19684915/manifest" href_uv="./viewers/uv/apocalypse.html" href_mirador="./viewers/mirador/apocalypse.html">Wellcome Apocalypse</option>
+				<option value="http://luna.folger.edu/luna/servlet/iiif/m/FOLGERCM1~6~6~899189~195467/manifest" href_uv="./viewers/uv/hamlet.html" href_mirador="./viewers/mirador/hamlet.html">William Shakespeare, The tragedy of Hamlet Prince of Denmarke</option>	
+				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/df9533a5-747f-45ae-877b-58449932aee4.json" href_uv="./viewers/uv/geology.html" href_mirador="./viewers/mirador/geology.html">Principles of Geology: Being an attempt to explain the former changes of the Earth's Surface, by reference to causes now in operation.</option>
+				<option value="http://dev.llgc.org.uk/iiif/ww1posters.json" href_uv="./viewers/uv/ww1posters.html" href_mirador="./viewers/mirador/ww1posters.html">First World War posters [20th cent.]</option>
+				<option value="https://iiif.lib.harvard.edu/manifests/drs:48309543" href_uv="./viewers/uv/chronique.html" href_mirador="./viewers/mirador/chronique.html">Chronique du monde depuis la création, et des rois de France et d'Angleterre, jusqu'à l'an 1461 : manuscript, [ca. 1461], MS Typ 41. Houghton Library, Harvard University</option>
+				<option value="http://api.bl.uk/metadata/iiif/ark:/81055/vdc_00000004216E/manifest.json" href_uv="./viewers/uv/dickens.html" href_mirador="./viewers/mirador/dickens.html">The Works of Charles Dickens. Household edition. [With illustrations.].</option>
+				<option value="http://gallica.bnf.fr/iiif/ark:/12148/btv1b55002481n/manifest.json" href_uv="./viewers/uv/atlas_catalan.html" href_mirador="./viewers/mirador/atlas_catalan.html">Abraham Cresques , Atlas de cartes marines , dit [Atlas catalan], Espagnol 30, BnF</option>
+				<option value="http://wellcomelibrary.org/iiif/b2103090x/manifest" href_uv="./viewers/uv/indians.html" href_mirador="./viewers/mirador/indians.html">Letters and notes on the manners, customs, and condition of the North American Indians</option>
+				<option value="http://iiif.bodleian.ox.ac.uk/iiif/manifest/a882e289-f46e-4aab-8f5c-c26c31071859.json" href_uv="./viewers/uv/urania.html" href_mirador="./viewers/mirador/urania.html">Urania's mirror, or a view of the heavens</option>
+				<option value="http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json" href_uv="./viewers/uv/astronomy.html" href_mirador="./viewers/mirador/astronomy.html">Composite manuscript of content related to astronomy, Basel, Universitätsbibliothek, F III 25</option>
+				<option value="http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json" href_uv="./viewers/uv/sententiarum.html" href_mirador="./viewer/mirador/sententiarum.html">Petrus Lombardus, Liber sententiarum I-IV, 	Cod. S II 72</option>
 			</select>
 			<br/>
-			<input id="manifest" type="text" size="80"> 
-			<a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a>
-			<a id="uvIcon" title="Open the selected item with the Universal Viewer" href="" target="_blank"><img src="images/uv.png" alt="The Universal Viewer"></a>
-			<a id="miradorIcon" title="Open the selected item with Mirador" href="" target="_blank"><img src="images/mirador.png" alt="Mirador"></a>
+			<ul>
+			<li>Click on this icon to open it with the Universal Viewer <a id="uvIcon" title="Open the selected item with the Universal Viewer" href="" target="_blank"><img src="images/uv.png" alt="The Universal Viewer"></a></li>
+			<li>Click on this icon to open it with with Mirador  <a id="miradorIcon" title="Open the selected item with Mirador" href="" target="_blank"><img src="images/mirador.png" alt="Mirador"></a></li>
+			<li>Drag and drop this icon into an open IIIF viewer <a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a></li>
+			</ul>
 	</body>
 </html>
 

@@ -11,7 +11,7 @@
 	<body>
 		<h1 class="header">Usability Test Sandbox: IIIF, The Universal Viewer, and Mirador</h1>
 			<p class="content">Select an item from this list and open it with The Universal Viewer or Mirador, two IIIF-compliant viewers. You can also drag and drop the IIIF logo into one of the viewers.</p>
-			<select id="manifestSelect" onchange="run();" style="height: 2.3em; font-size: 1.2em">
+			<select id="manifestSelect" onchange="run();" style="height: 2.5em; font-size: 1.2em">
 				<option disabled selected value>Select an item</option>
 				<option value="http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json" href_uv="./viewers/uv/iliad.html" href_mirador="./viewers/mirador/iliad.html">Homer, Iliad with scholia and an interlinear paraphrase of Books I to XII, Genève, Bibliothèque de Genève, MS. gr. 44</option>
 				<option value="https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json" vhref_uv="./viewers/uv/relativity.html" href_mirador="./viewers/mirador/relativity.html">Albert Einstein, The principle of relativity; original papers</option>
@@ -32,11 +32,19 @@
 				<option value="http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json" href_uv="./viewers/uv/sententiarum.html" href_mirador="./viewers/mirador/sententiarum.html">Petrus Lombardus, Liber sententiarum I-IV, 	Cod. S II 72</option>
 			</select>
 			<br/>
-			<ul>
+			<ul class="content">
 			<li>Click on this icon to open it with the Universal Viewer <a id="uvIcon" title="Open the selected item with the Universal Viewer" href="" target="_blank"><img src="images/uv.png" alt="The Universal Viewer"></a></li>
-			<li>Click on this icon to open it with with Mirador  <a id="miradorIcon" title="Open the selected item with Mirador" href="" target="_blank"><img src="images/mirador.png" alt="Mirador"></a></li>
+			<li>Click on this icon to open it with with Mirador <a id="miradorIcon" title="Open the selected item with Mirador" href="" target="_blank"><img src="images/mirador.png" alt="Mirador"></a></li>
 			<li>Drag and drop this icon into an open IIIF viewer <a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a></li>
 			</ul>
+		<script type="text/javascript">
+   			var loop11_key = "65f3ca3b97f50e417e9a112279dc79c051b6832d";
+    		var l11_clientOptions = {"crossDomainSupport":true};
+   			var l11_clientOptions = {"cookieDomain":".http://campus.hesge.ch/"};
+    		var l11_clientOptions = {"cookieDomain":".http://scta.lombardpress.org/"};
+    		var l11_clientOptions = {"cookieDomain":".http://digital.bodleian.ox.ac.uk/"};
+    		document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
+    	</script>
 	</body>
 </html>
 

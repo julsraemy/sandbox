@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="IIIF-Viewers Usability Test">
+ 		<meta name="keywords" content="IIIF, Mirador, The Universal Viewer, Usability Test, Bachelor's thesis">
+  		<meta name="author" content="Julien A. Raemy">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<title>sandbUX</title>
+		<script type="text/javascript" src="optionmanifest.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		 <style type="text/css">
+    html {
+      background-color: #999;
+    }
+    body {
+      background-color: #fff;
+      padding: 1em 0;
+      margin: 0 5% !important;
+      width: 90%;
+    }
+    #viewer {
+      display: block;
+      width: 90%;
+      height: 800px;
+      margin: 1em 5%;
+      position: relative;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="viewers/mirador/mirador/css/mirador-combined.css">
+    </style>
+	</head>
+  <body>
+  		<h1 class="header">Usability Test Sandbox: IIIF, The Universal Viewer, and Mirador</h1>
+			<select id="manifestSelect" onchange="run();" style="height: 2.5em; font-size: 1.2em">
+				<option disabled selected value>Select an item</option>
+				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json" href_uv="./viewers/uv/iliad.html" href_mirador="./viewers/mirador/iliad.html">Homer, Iliad with scholia and an interlinear paraphrase of Books I to XII, Genève, Bibliothèque de Genève, MS. gr. 44</option>
+				<option value="/default_target?manifest=https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json" href_uv="./viewers/uv/relativity.html" href_mirador="./viewers/mirador/relativity.html">Albert Einstein, The principle of relativity; original papers</option>
+				<option value="/default_target?manifest=http://iiif.bodleian.ox.ac.uk/iiif/manifest/60834383-7146-41ab-bfe1-48ee97bc04be.json" href_uv="./viewers/uv/romance.html" href_mirador="./viewers/mirador/romance.html">Romance of Alexander, Alexander and Dindimus, Li Livres du Graunt Caam; Inside upper cover, MS. Bodl. 264</option>
+				<option value="/default_target?manifest=http://wellcomelibrary.org/iiif/b18035723/manifest" href_uv="./viewers/uv/wunder.html" href_mirador="./viewers/mirador/wunder.html">Wunder der Vererbung</option>
+				<option value="/default_target?manifest=https://purl.stanford.edu/qm670kv1873/iiif/manifest.json" href_uv="./viewers/uv/book_of_hours.html" href_mirador="./viewers/mirador/book_of_hours.html">Book of Hours, Walters Ms. W.168</option>
+				<option value="/default_target?manifest=http://www.e-codices.unifr.ch/metadata/iiif/fmb-cb-0600a/manifest.json" href_uv="./viewers/uv/buddha.html" href_mirador="./viewers/mirador/buddha.html">The Life of Buddha, first book (Shaka no Honji, jō), Cod. Bodmer 600a</option>	
+				<option value="/default_target?manifest=http://wellcomelibrary.org/iiif/b19684915/manifest" href_uv="./viewers/uv/apocalypse.html" href_mirador="./viewers/mirador/apocalypse.html">Wellcome Apocalypse</option>
+				<option value="/default_target?manifest=http://luna.folger.edu/luna/servlet/iiif/m/FOLGERCM1~6~6~899189~195467/manifest" href_uv="./viewers/uv/hamlet.html" href_mirador="./viewers/mirador/hamlet.html">William Shakespeare, The tragedy of Hamlet Prince of Denmarke</option>	
+				<option value="/default_target?manifest=http://iiif.bodleian.ox.ac.uk/iiif/manifest/df9533a5-747f-45ae-877b-58449932aee4.json" href_uv="./viewers/uv/geology.html" href_mirador="./viewers/mirador/geology.html">Principles of Geology: Being an attempt to explain the former changes of the Earth's Surface, by reference to causes now in operation.</option>
+				<option value="/default_target?manifest=http://dev.llgc.org.uk/iiif/ww1posters.json" href_uv="./viewers/uv/ww1posters.html" href_mirador="./viewers/mirador/ww1posters.html">First World War posters [20th cent.]</option>
+				<option value="/default_target?manifest=https://iiif.lib.harvard.edu/manifests/drs:48309543" href_uv="./viewers/uv/chronique.html" href_mirador="./viewers/mirador/chronique.html">Chronique du monde depuis la création, et des rois de France et d'Angleterre, jusqu'à l'an 1461 : manuscript, [ca. 1461], MS Typ 41.</option>
+				<option value="/default_target?manifest=http://api.bl.uk/metadata/iiif/ark:/81055/vdc_00000004216E/manifest.json" href_uv="./viewers/uv/dickens.html" href_mirador="./viewers/mirador/dickens.html">The Works of Charles Dickens. Household edition. [With illustrations.].</option>
+				<option value="/default_target?manifest=http://gallica.bnf.fr/iiif/ark:/12148/btv1b55002481n/manifest.json" href_uv="./viewers/uv/atlas_catalan.html" href_mirador="./viewers/mirador/atlas_catalan.html">Abraham Cresques , Atlas de cartes marines , dit [Atlas catalan], Espagnol 30, BnF</option>
+				<option value="/default_target?manifest=http://wellcomelibrary.org/iiif/b2103090x/manifest" href_uv="./viewers/uv/indians.html" href_mirador="./viewers/mirador/indians.html">Letters and notes on the manners, customs, and condition of the North American Indians</option>
+				<option value="/default_target?manifest=http://iiif.bodleian.ox.ac.uk/iiif/manifest/a882e289-f46e-4aab-8f5c-c26c31071859.json" href_uv="./viewers/uv/urania.html" href_mirador="./viewers/mirador/urania.html">Urania's mirror, or a view of the heavens</option>
+				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json" href_uv="./viewers/uv/astronomy.html" href_mirador="./viewers/mirador/astronomy.html">Composite manuscript of content related to astronomy, Basel, Universitätsbibliothek, F III 25</option>
+				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json" href_uv="./viewers/uv/sententiarum.html" href_mirador="./viewers/mirador/sententiarum.html">Petrus Lombardus, Liber sententiarum I-IV, 	Cod. S II 72</option>
+			</select>
+			<p>Select an item and drag and drop this IIIF icon into the viewer below <a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a></p>
+
+<div id="viewer" allowfullscreen="allowfullscreen"></div>
+
+    <script src="viewers/mirador/mirador/mirador.min.js"></script>
+    <script type="text/javascript">
+
+     $(function() {
+       myMiradorInstance = Mirador({
+         id: "viewer",
+         layout: "1x2",
+         buildPath: "viewers/mirador/mirador/",
+         data: [
+           { manifestUri: "https://iiif.lib.harvard.edu/manifests/drs:48309543", location: "Harvard University"},
+           { manifestUri: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/60834383-7146-41ab-bfe1-48ee97bc04be.json", location: "Bodleian Libraries"},
+           { manifestUri: "http://wellcomelibrary.org/iiif/b18035723/manifest", location: "Wellcome Library"},
+           { manifestUri: "https://purl.stanford.edu/qm670kv1873/iiif/manifest.json", location: "Stanford University"},
+           { manifestUri: "http://wellcomelibrary.org/iiif/b19684915/manifest", location: "Wellcome Library"},
+           { manifestUri: "http://wellcomelibrary.org/iiif/b2103090x/manifest", location: "Wellcome Library"},
+           { manifestUri: "http://luna.folger.edu/luna/servlet/iiif/m/FOLGERCM1~6~6~899189~195467/manifest", location: "Luna Imaging"},
+           { manifestUri: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/df9533a5-747f-45ae-877b-58449932aee4.json", location: "Bodleian Libraries"},
+           { manifestUri: "http://api.bl.uk/metadata/iiif/ark:/81055/vdc_00000004216E/manifest.json", location: "British Library"},
+           { manifestUri: "http://dev.llgc.org.uk/iiif/ww1posters.json", location: "National Library of Wales"},
+           { manifestUri: "http://gallica.bnf.fr/iiif/ark:/12148/btv1b55002481n/manifest.json", location: 'BnF'},
+           { manifestUri: "http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json", location: "e-codices"},
+           { manifestUri: "http://www.e-codices.unifr.ch/metadata/iiif/fmb-cb-0600a/manifest.json", location: 'e-codices'},
+           { manifestUri: "https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json", location: "Internet Archive"},
+           { manifestUri: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/a882e289-f46e-4aab-8f5c-c26c31071859.json", location: "Bodleian Libraries"},
+           { manifestUri: "http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json", location: "e-codices"},
+           { manifestUri: "http://wellcomelibrary.org/iiif/b2103090x/manifest", location: "Wellcome Library"},
+           { manifestUri: "http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json", location: "e-codices"},
+           { manifestUri: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/f19aeaf9-5aba-4cee-be32-584663ff1ef1.json", location: "Bodleian Libraries"}
+         ],
+         windowObjects: [{
+                loadedManifest: "http://iiif.bodleian.ox.ac.uk/iiif/manifest/f19aeaf9-5aba-4cee-be32-584663ff1ef1.json",
+                canvasID: "http://iiif.bodleian.ox.ac.uk/iiif/canvas/0a1a4aeb-0dcf-4278-a16b-3d98baa97032.json",
+                viewType: "ImageView",
+                slotAddress: "row1.column1",
+         }],
+         annotationEndpoint: {
+           name:"Local Storage",
+           module: "LocalStorageEndpoint" }
+       });
+     });
+    </script>
+    		<!-- Loop11 JavaScript / Remote usability tests -->
+		<script type="text/javascript">
+   			var loop11_key = "65f3ca3b97f50e417e9a112279dc79c051b6832d";
+    		var l11_clientOptions = {"crossDomainSupport":true};
+    		document.write(unescape("%3cscript src='//cdn.loop11.com/my/loop11.js' type='text/javascript'%3e%3c/script%3e"));
+    	</script>
+  </body> 
+</html>

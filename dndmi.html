@@ -9,15 +9,10 @@
 		<title>sandbUX</title>
 		<script type="text/javascript" src="optionmanifest.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel=stylesheet href="css/base.css">
 		 <style type="text/css">
     html {
       background-color: #999;
-    }
-    body {
-      background-color: #fff;
-      padding: 1em 0;
-      margin: 0 5% !important;
-      width: 90%;
     }
     #viewer {
       display: block;
@@ -26,16 +21,13 @@
       margin: 1em 5%;
       position: relative;
     }
-    h1, h2 {
-      text-align: center;
-    }
   </style>
   <link rel="stylesheet" type="text/css" href="viewers/mirador/mirador/css/mirador-combined.css">
     </style>
 	</head>
   <body>
   		<h1 class="header">Usability Test Sandbox: IIIF, The Universal Viewer, and Mirador</h1>
-			<select id="manifestSelect" onchange="run();" style="height: 2.5em; font-size: 1.2em">
+			<select id="manifestSelect" onchange="run();" style="height: 2.5em; font-size: 1.1em; margin: 1em">
 				<option disabled selected value>Select an item</option>
 				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/bge-gr0044/manifest.json" href_uv="./viewers/uv/iliad.html" href_mirador="./viewers/mirador/iliad.html">Homer, Iliad with scholia and an interlinear paraphrase of Books I to XII, Genève, Bibliothèque de Genève, MS. gr. 44</option>
 				<option value="/default_target?manifest=https://iiif.archivelab.org/iiif/principleofrelat00eins/manifest.json" href_uv="./viewers/uv/relativity.html" href_mirador="./viewers/mirador/relativity.html">Albert Einstein, The principle of relativity; original papers</option>
@@ -55,7 +47,7 @@
 				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/ubb-F-III-0025/manifest.json" href_uv="./viewers/uv/astronomy.html" href_mirador="./viewers/mirador/astronomy.html">Composite manuscript of content related to astronomy, Basel, Universitätsbibliothek, F III 25</option>
 				<option value="/default_target?manifest=http://www.e-codices.ch/metadata/iiif/zbs-SII-0072/manifest.json" href_uv="./viewers/uv/sententiarum.html" href_mirador="./viewers/mirador/sententiarum.html">Petrus Lombardus, Liber sententiarum I-IV, 	Cod. S II 72</option>
 			</select>
-			<p>Select an item and drag and drop this IIIF icon into the viewer below <a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a></p>
+			<p style="margin: 1em">Select an item and drag and drop this IIIF icon into the viewer below <a id="dragndrop" title="Drag &amp; Drop this icon into a IIIF viewer" href="" target="_blank"><img src="images/logo-iiif-34x30.png" alt="IIIF Drag-n-drop"></a></p>
 
 <div id="viewer" allowfullscreen="allowfullscreen"></div>
 
